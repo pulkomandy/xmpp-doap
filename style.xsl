@@ -8,7 +8,7 @@
 <xsl:template match="doap:Project">
 	<html>
 		<head>
-			<link href="https://raw.githubusercontent.com/pulkomandy/xmpp-doap/master/style.css" type="text/css" rel="stylesheet"/>
+			<link href="style.css" type="text/css" rel="stylesheet"/>
 			<title>XMPP implementation support for <xsl:value-of select="doap:name"/></title>
 		</head>
 		<body>
@@ -59,8 +59,9 @@
 
 <xsl:template match="xmpp:SupportedXep">
 	<tr class="{xmpp:status}">
-		<!-- TODO: figure out a XSLT way of extracting the XEP number from its URL. -->
-		<td><a href="{xmpp:xep/@rdf:resource}"><xsl:value-of select="xmpp:xep/@rdf:resource"/></a></td>
+		<td><a href="{xmpp:xep/@rdf:resource}">XEP-
+				<xsl:value-of select="substring-before(substring-after(xmpp:xep/@rdf:resource, 'https://xmpp.org/extensions/xep-'), '.')"/>
+		</a></td>
 		<td><xsl:value-of select="xmpp:version"/></td>
 		<td><xsl:value-of select="xmpp:status"/></td>
 		<td><xsl:value-of select="xmpp:since"/></td>
