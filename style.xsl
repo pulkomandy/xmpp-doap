@@ -53,13 +53,14 @@
 	<li><xsl:value-of select="."/></li>
 </xsl:template>
 
-<xsl:template match="xmpp:xep">
-	<xsl:apply-templates select="xmpp:Xep"/>
+<xsl:template match="xmpp:supports">
+	<xsl:apply-templates select="xmpp:SupportedXep"/>
 </xsl:template>
 
-<xsl:template match="xmpp:Xep">
+<xsl:template match="xmpp:SupportedXep">
 	<tr class="{xmpp:status}">
-		<td><xsl:value-of select="xmpp:number"/></td>
+		<!-- TODO: figure out a XSLT way of extracting the XEP number from its URL. -->
+		<td><a href="{xmpp:xep/@rdf:resource}"><xsl:value-of select="xmpp:xep/@rdf:resource"/></a></td>
 		<td><xsl:value-of select="xmpp:version"/></td>
 		<td><xsl:value-of select="xmpp:status"/></td>
 		<td><xsl:value-of select="xmpp:since"/></td>
