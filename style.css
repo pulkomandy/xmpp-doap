@@ -1,0 +1,24 @@
+table {
+	border-collapse: collapse;
+}
+
+th {
+	border: 1px solid grey;
+}
+
+td {
+	border: 1px solid grey;
+	padding: 2px;	
+}
+
+a {
+	padding: 3px;
+}
+
+.complete td {
+	color:green;
+}
+
+.partial td {
+	color:orange;
+}

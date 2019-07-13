@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="style.xsl" type="text/xsl"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <name>poezio</name>
+
+    <created>2010-01-10</created>
+
+    <shortdesc xml:lang="en">Free console XMPP client</shortdesc>
+    <shortdesc xml:lang="fr">Client XMPP libre en console</shortdesc>
+
+    <description xml:lang="en">Free and modern console XMPP client written in Python with the ncurses library</description>
+    <description xml:lang="fr">Client console XMPP libre et moderne, écrit en Python avec la bibliothèque ncurses</description>
+
+    <homepage rdf:resource="https://poez.io/"/>
+    <!-- TODO: https://github.com/ewilderj/doap/issues/51 -->
+    <!--<doc rdf:resource="https://doc.poez.io/"/>-->
+    <download-page rdf:resource="https://dev.louiz.org/projects/poezio/files"/>
+    <bug-database rdf:resource="https://dev.louiz.org/projects/poezio/issues"/>
+    <!-- TODO: https://github.com/ewilderj/doap/issues/53 -->
+    <!--<chat>xmpp:poezio@muc.poez.io?join</chat>-->
+
+    <license rdf:resource="https://git.poez.io/poezio/plain/COPYING"/>
+
+    <!-- TODO: https://github.com/ewilderj/doap/issues/49 -->
+    <language>eng</language>
+
+    <!-- TODO: https://github.com/ewilderj/doap/issues/40 -->
+    <!--<logo rdf:resource="https://poez.io/img/logo.png"/>-->
+    <!-- TODO: https://github.com/ewilderj/doap/issues/50 -->
+    <!--<screenshot rdf:resource="https://poez.io/img/screenshot.png"/>-->
+
+    <programming-language>Python</programming-language>
+
+    <os>Linux</os>
+    <os>macOS</os>
+    <os>FreeBSD</os>
+    <os>OpenBSD</os>
+    <os>NetBSD</os>
+
+    <!-- TODO: Categories are URIs, find a better location for them. -->
+    <category rdf:resource="xmpp:linkmauve.fr/category/XMPP"/>
+    <category rdf:resource="xmpp:linkmauve.fr/category/Jabber"/>
+    <category rdf:resource="xmpp:linkmauve.fr/category/client"/>
+    <category rdf:resource="xmpp:linkmauve.fr/category/console"/>
+    <category rdf:resource="xmpp:linkmauve.fr/category/ncurses"/>
+
+    <maintainer>
+        <foaf:Person>
+            <foaf:name>Link Mauve</foaf:name>
+            <foaf:homepage rdf:resource="https://linkmauve.fr/"/>
+            <foaf:mbox_sha1sum>aaa4dac2b31c1be4ee8f8e2ab986d34fb261974f</foaf:mbox_sha1sum>
+        </foaf:Person>
+    </maintainer>
+    <maintainer>
+        <foaf:Person>
+            <foaf:name>louiz’</foaf:name>
+            <foaf:homepage rdf:resource="https://louiz.org/"/>
+            <foaf:mbox_sha1sum>a867767905969a4915147374e3a064f97cdf5d61</foaf:mbox_sha1sum>
+        </foaf:Person>
+    </maintainer>
+    <maintainer>
+        <foaf:Person>
+            <foaf:name>mathieui</foaf:name>
+            <foaf:homepage rdf:resource="https://mathieui.net/"/>
+            <foaf:mbox_sha1sum>c14292b375a7cec3f39872aa8524c66a1d9106cf</foaf:mbox_sha1sum>
+        </foaf:Person>
+    </maintainer>
+
+    <repository>
+        <!-- TODO: GitRepository isn’t defined in doap.rdf, see
+             https://github.com/ewilderj/doap/issues/42, and
+             https://github.com/ewilderj/doap/issues/38 for a proposed
+             solution. -->
+        <GitRepository>
+            <browse rdf:resource="https://git.poez.io/poezio/"/>
+            <location rdf:resource="https://git.poez.io/poezio.git"/>
+        </GitRepository>
+    </repository> 
+
+    <implements rdf:resource="https://xmpp.org/rfcs/rfc6120.html"/>
+    <implements rdf:resource="https://xmpp.org/rfcs/rfc6121.html"/>
+    <implements rdf:resource="https://xmpp.org/rfcs/rfc6122.html"/>
+    <implements rdf:resource="https://xmpp.org/rfcs/rfc7590.html"/>
+    <!-- TODO: Report a bug to support that in poezio. -->
+    <!-- TODO: Add this one to the xsf/rfcs repository. -->
+    <!--<implements rdf:resource="https://xmpp.org/rfcs/rfc5122.html"/>-->
+
+    <!-- TODO: Figure out what’s still missing, and what could instead go into DOAP. -->
+    <!-- TODO: Write a schema for that. -->
+    <xmpp-software xmlns="xmpp:linkmauve.fr/protocols/xmpp-software">
+        <type>client</type>
+        <!-- TODO: Maybe this is just a normal dependency?
+	     See https://github.com/ewilderj/doap/issues/1 -->
+        <!-- TODO: Should we link to anther DOAP file here? -->
+        <!--<library rdf:resource="https://dev.louiz.org/projects/slixmpp"/>-->
+        <extension number="0004" status="complete" version="2.9" since="0.7.2" note="used for ad-hoc commands"/>
+        <extension number="0012" status="complete" version="2.0" since="0.8"/>
+        <extension number="0027" status="complete" version="1.4" since="0.7.5" note="plugin"/>
+        <extension number="0030" status="complete" version="2.4" since="0.5"/>
+        <extension number="0045" status="partial" version="1.27.1"/>
+        <extension number="0048" status="partial" version="1.1" since="0.7.5"/>
+        <extension number="0049" status="complete" version="1.2" since="0.7.5"/>
+        <extension number="0050" status="partial" version="1.2.2" since="0.9"/>
+        <extension number="0054" status="partial" version="1.2" since="0.10" note="viewing only"/>
+        <extension number="0060" status="partial" version="1.13.5" since="0.8" note="only the PEP subset"/>
+        <extension number="0070" status="complete" version="1.0.1" since="0.10"/>
+        <extension number="0071" status="partial" version="1.5.1" since="0.7.2"/>
+        <extension number="0077" status="partial" version="2.4" since="0.8" note="only for password change"/>
+        <extension number="0085" status="complete" version="2.1" since="0.7.2" note="also displayed in group chat"/>
+        <extension number="0091" status="complete" version="1.4" since="0.7.2" note="deprecated, will be removed in a future release"/>
+        <extension number="0092" status="complete" version="1.1" since="0.7"/>
+        <extension number="0107" status="complete" version="1.2" since="0.8"/>
+        <extension number="0108" status="complete" version="1.3" since="0.8"/>
+        <extension number="0115" status="partial" version="1.5.1" since="0.8"/>
+        <extension number="0118" status="partial" version="1.2" since="0.8"/>
+        <extension number="0163" status="complete" version="1.2" since="0.8"/>
+        <extension number="0172" status="complete" version="1.1" since="0.8"/>
+        <extension number="0175" status="complete" version="1.2" since="0.5"/>
+        <extension number="0178" status="complete" version="1.1" since="0.9"/>
+        <extension number="0184" status="complete" version="1.2" since="0.9"/>
+        <extension number="0191" status="partial" version="1.3" since="0.8" note="missing a view to manage blocks"/>
+        <extension number="0196" status="partial" version="0.3" since="0.8"/>
+        <extension number="0198" status="complete" version="1.5.2" since="0.10"/>
+        <extension number="0199" status="complete" version="2.0" since="0.8"/>
+        <extension number="0202" status="complete" version="2.0" since="0.7"/>
+        <extension number="0203" status="complete" version="2.0" since="0.7.2"/>
+        <extension number="0224" status="complete" version="1.0" since="0.7.5"/>
+        <extension number="0231" status="partial" version="1.0" since="0.10" note="plugin, sending-only"/>
+        <extension number="0245" status="partial" version="1.0" since="0.6"/>
+        <extension number="0249" status="partial" version="1.2" since="0.9"/>
+        <extension number="0257" status="complete" version="0.3" since="0.9"/>
+        <extension number="0280" status="complete" version="0.11.0" since="0.8"/>
+        <extension number="0296" status="complete" version="0.2" since="0.8"/>
+        <extension number="0297" status="complete" version="1.0" since="0.8" note="only used for Carbons"/>
+        <extension number="0308" status="complete" version="1.0" since="0.8"/>
+        <extension number="0319" status="complete" version="1.0" since="0.10"/>
+        <extension number="0334" status="complete" version="0.2" since="0.10"/>
+        <extension number="0352" status="complete" version="0.2" since="0.10"/>
+        <extension number="0364" status="complete" version="0.3" since="0.7.5" note="plugin"/>
+        <extension number="0378" status="complete" version="0.0.1" since="0.10"/>
+        <extension number="0380" status="partial" version="0.1" since="0.11"/>
+    </xmpp-software>
+
+    <release>
+        <Version>
+            <revision>0.11</revision>
+            <created>2017-01-31</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/118/poezio-0.11.tar.gz"/>
+        </Version>
+    </release>
+    <!-- TODO: https://github.com/ewilderj/doap/issues/52 -->
+    <release>
+        <Version>
+            <revision>0.10</revision>
+            <created>2016-10-09</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/102/poezio-0.10.tar.gz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.9</revision>
+            <created>2015-07-31</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/91/poezio-0.9.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.8.1</revision>
+            <created>2014-03-20</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/52/poezio-0.8.1.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.8</revision>
+            <created>2014-02-22</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/43/poezio-0.8.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7.5.2</revision>
+            <created>2012-??-??</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/19/poezio-0.7.5.2.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7.5.1</revision>
+            <created>2012-??-??</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/18/poezio-0.7.5.1.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7.5</revision>
+            <created>2012-05-25</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/20/poezio-0.7.5.tar.gz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7.2</revision>
+            <created>2011-11-08</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/21/poezio-0.7.2.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7.1</revision>
+            <created>2011-02-02</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/22/poezio-0.7.1.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.7</revision>
+            <created>2011-01-14</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/23/poezio-0.7.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.6.2</revision>
+            <created>2010-07-21</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/24/poezio-0.6.2.tar.xz"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.6.1</revision>
+            <created>2010-06-13</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/26/poezio-0.6.1.tar.bz2"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.6</revision>
+            <created>2010-06-13</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/27/poezio-0.6.tar.bz2"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.5.1</revision>
+            <created>2010-02-02</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/28/poezio-0.5.1.tar.bz2"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.5</revision>
+            <created>2010-02-01</created>
+            <file-release rdf:resource="https://dev.louiz.org/attachments/29/poezio-0.5.tar.bz2"/>
+        </Version>
+    </release>
+</Project>
