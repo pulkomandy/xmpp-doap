@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="style.xsl" type="text/xsl"?>
-<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Project xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#">
     <name>poezio</name>
 
     <created>2010-01-10</created>
@@ -38,11 +39,11 @@
     <os>NetBSD</os>
 
     <!-- TODO: Categories are URIs, find a better location for them. -->
-    <category rdf:resource="xmpp:linkmauve.fr/category/XMPP"/>
-    <category rdf:resource="xmpp:linkmauve.fr/category/Jabber"/>
-    <category rdf:resource="xmpp:linkmauve.fr/category/client"/>
-    <category rdf:resource="xmpp:linkmauve.fr/category/console"/>
-    <category rdf:resource="xmpp:linkmauve.fr/category/ncurses"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-xmpp"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-jabber"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-client"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-console"/>
+    <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-ncurses"/>
 
     <maintainer>
         <foaf:Person>
@@ -87,59 +88,390 @@
 
     <!-- TODO: Figure out what’s still missing, and what could instead go into DOAP. -->
     <!-- TODO: Write a schema for that. -->
-    <xmpp-software xmlns="xmpp:linkmauve.fr/protocols/xmpp-software">
-        <type>client</type>
-        <!-- TODO: Maybe this is just a normal dependency?
-	     See https://github.com/ewilderj/doap/issues/1 -->
-        <!-- TODO: Should we link to anther DOAP file here? -->
-        <!--<library rdf:resource="https://dev.louiz.org/projects/slixmpp"/>-->
-        <extension number="0004" status="complete" version="2.9" since="0.7.2" note="used for ad-hoc commands"/>
-        <extension number="0012" status="complete" version="2.0" since="0.8"/>
-        <extension number="0027" status="complete" version="1.4" since="0.7.5" note="plugin"/>
-        <extension number="0030" status="complete" version="2.4" since="0.5"/>
-        <extension number="0045" status="partial" version="1.27.1"/>
-        <extension number="0048" status="partial" version="1.1" since="0.7.5"/>
-        <extension number="0049" status="complete" version="1.2" since="0.7.5"/>
-        <extension number="0050" status="partial" version="1.2.2" since="0.9"/>
-        <extension number="0054" status="partial" version="1.2" since="0.10" note="viewing only"/>
-        <extension number="0060" status="partial" version="1.13.5" since="0.8" note="only the PEP subset"/>
-        <extension number="0070" status="complete" version="1.0.1" since="0.10"/>
-        <extension number="0071" status="partial" version="1.5.1" since="0.7.2"/>
-        <extension number="0077" status="partial" version="2.4" since="0.8" note="only for password change"/>
-        <extension number="0085" status="complete" version="2.1" since="0.7.2" note="also displayed in group chat"/>
-        <extension number="0091" status="complete" version="1.4" since="0.7.2" note="deprecated, will be removed in a future release"/>
-        <extension number="0092" status="complete" version="1.1" since="0.7"/>
-        <extension number="0107" status="complete" version="1.2" since="0.8"/>
-        <extension number="0108" status="complete" version="1.3" since="0.8"/>
-        <extension number="0115" status="partial" version="1.5.1" since="0.8"/>
-        <extension number="0118" status="partial" version="1.2" since="0.8"/>
-        <extension number="0163" status="complete" version="1.2" since="0.8"/>
-        <extension number="0172" status="complete" version="1.1" since="0.8"/>
-        <extension number="0175" status="complete" version="1.2" since="0.5"/>
-        <extension number="0178" status="complete" version="1.1" since="0.9"/>
-        <extension number="0184" status="complete" version="1.2" since="0.9"/>
-        <extension number="0191" status="partial" version="1.3" since="0.8" note="missing a view to manage blocks"/>
-        <extension number="0196" status="partial" version="0.3" since="0.8"/>
-        <extension number="0198" status="complete" version="1.5.2" since="0.10"/>
-        <extension number="0199" status="complete" version="2.0" since="0.8"/>
-        <extension number="0202" status="complete" version="2.0" since="0.7"/>
-        <extension number="0203" status="complete" version="2.0" since="0.7.2"/>
-        <extension number="0224" status="complete" version="1.0" since="0.7.5"/>
-        <extension number="0231" status="partial" version="1.0" since="0.10" note="plugin, sending-only"/>
-        <extension number="0245" status="partial" version="1.0" since="0.6"/>
-        <extension number="0249" status="partial" version="1.2" since="0.9"/>
-        <extension number="0257" status="complete" version="0.3" since="0.9"/>
-        <extension number="0280" status="complete" version="0.11.0" since="0.8"/>
-        <extension number="0296" status="complete" version="0.2" since="0.8"/>
-        <extension number="0297" status="complete" version="1.0" since="0.8" note="only used for Carbons"/>
-        <extension number="0308" status="complete" version="1.0" since="0.8"/>
-        <extension number="0319" status="complete" version="1.0" since="0.10"/>
-        <extension number="0334" status="complete" version="0.2" since="0.10"/>
-        <extension number="0352" status="complete" version="0.2" since="0.10"/>
-        <extension number="0364" status="complete" version="0.3" since="0.7.5" note="plugin"/>
-        <extension number="0378" status="complete" version="0.0.1" since="0.10"/>
-        <extension number="0380" status="partial" version="0.1" since="0.11"/>
-    </xmpp-software>
+    <xmpp:software>
+        <xmpp:Software>
+            <xmpp:type rdf:resource="https://linkmauve.fr/ns/xmpp-doap#type-client"/>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0004</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.9</xmpp:version>
+                    <xmpp:since>0.7.2</xmpp:since>
+                    <xmpp:note>used for ad-hoc commands</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0012</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.0</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0027</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.4</xmpp:version>
+                    <xmpp:since>0.7.5</xmpp:since>
+                    <xmpp:until>6cc1360a3a999c4384531e4f6576144040886768</xmpp:until>
+                    <xmpp:note>plugin</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0030</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.4</xmpp:version>
+                    <xmpp:since>0.5</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0045</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.27.1</xmpp:version>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0048</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.1</xmpp:version>
+                    <xmpp:since>0.7.5</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0049</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.7.5</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0050</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.2.2</xmpp:version>
+                    <xmpp:since>0.9</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0054</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                    <xmpp:note>viewing only</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0060</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.13.5</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                    <xmpp:note>only the PEP subset</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0070</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.0.1</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0071</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.5.1</xmpp:version>
+                    <xmpp:since>0.7.2</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0077</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>2.4</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                    <xmpp:note>only for password change</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0085</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.1</xmpp:version>
+                    <xmpp:since>0.7.2</xmpp:since>
+                    <xmpp:note>also displayed in group chat</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0091</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.4</xmpp:version>
+                    <xmpp:since>0.7.2</xmpp:since>
+                    <xmpp:note>deprecated, will be removed in a future release</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0092</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.1</xmpp:version>
+                    <xmpp:since>0.7</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0107</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0108</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.3</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0115</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.5.1</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0118</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0163</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0172</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.1</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0175</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.5</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0178</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.1</xmpp:version>
+                    <xmpp:since>0.9</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0184</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.9</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0191</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.3</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                    <xmpp:note>missing a view to manage blocks</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0196</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>0.3</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0198</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.5.2</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0199</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.0</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0202</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.0</xmpp:version>
+                    <xmpp:since>0.7</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0203</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>2.0</xmpp:version>
+                    <xmpp:since>0.7.2</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0224</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.7.5</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0231</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                    <xmpp:note>plugin, sending-only</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0245</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.6</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0249</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>1.2</xmpp:version>
+                    <xmpp:since>0.9</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0257</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.3</xmpp:version>
+                    <xmpp:since>0.9</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0280</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.11.0</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0296</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.2</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0297</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                    <xmpp:note>only used for Carbons</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0308</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.8</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0319</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>1.0</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0334</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.2</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0352</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.2</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0364</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.3</xmpp:version>
+                    <xmpp:since>0.7.5</xmpp:since>
+                    <xmpp:note>plugin</xmpp:note>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0378</xmpp:number>
+                    <xmpp:status>complete</xmpp:status>
+                    <xmpp:version>0.0.1</xmpp:version>
+                    <xmpp:since>0.10</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+            <xmpp:xep>
+                <xmpp:Xep>
+                    <xmpp:number>0380</xmpp:number>
+                    <xmpp:status>partial</xmpp:status>
+                    <xmpp:version>0.1</xmpp:version>
+                    <xmpp:since>0.11</xmpp:since>
+                </xmpp:Xep>
+            </xmpp:xep>
+        </xmpp:Software>
+    </xmpp:software>
 
     <release>
         <Version>
@@ -255,3 +587,4 @@
         </Version>
     </release>
 </Project>
+</rdf:RDF>
