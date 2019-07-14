@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="dashboard.xsl" type="text/xsl"?>
+<xep xmlns:xi="http://www.w3.org/2003/XInclude">
+	<xi:include href="samples/poezio.xml"/>
+	<xi:include href="samples/movim.xml"/>
+</xep>
