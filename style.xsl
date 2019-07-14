@@ -8,7 +8,7 @@
 <xsl:template match="doap:Project">
 	<html>
 		<head>
-			<link href="style.css" type="text/css" rel="stylesheet"/>
+			<link href="../style.css" type="text/css" rel="stylesheet"/>
 			<title>XMPP implementation support for <xsl:value-of select="doap:name"/></title>
 		</head>
 		<body>
