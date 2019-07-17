@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:doap="http://usefulinc.com/ns/doap#"
+	xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#"
+>
+
+<!--
+	Copyright © 2019 Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>
+-->
+
+<!-- about this schema -->
+
+<owl:Ontology rdf:about="https://linkmauve.fr/ns/xmpp-doap#">
+	<owl:imports rdf:resource="http://usefulinc.com/ns/doap#" />
+
+	<dc:title xml:lang="en">XMPP Support in a Project vocabulary</dc:title>
+	<dc:description xml:lang="en">XMPP Support in a Project vocabulary, described using W3C RDF Schema and the Web Ontology Language.</dc:description>
+	<dc:creator>Emmanuel Gil Peyrot</dc:creator>
+	<dc:format>application/rdf+xml</dc:format>
+	<dc:rights>Copyright © 2019 Emmanuel Gil Peyrot</dc:rights>
+
+	<foaf:maker>
+		<foaf:Person>
+			<foaf:name>Emmanuel Gil Peyrot</foaf:name>
+			<foaf:mbox rdf:resource="mailto:linkmauve@linkmauve.fr" />
+		</foaf:Person>
+	</foaf:maker>
+
+</owl:Ontology>
+
+<!-- Classes are listed first -->
+
+<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Client">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">client</rdfs:label>
+	<rdfs:label xml:lang="fr">client</rdfs:label>
+	<rdfs:comment xml:lang="en">An XMPP client, connecting to an XMPP server or using serverless messaging (XEP-0174).</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Un client XMPP, se connectant à un serveur XMPP ou utilisant des messages sans serveur (XEP-0174).</rdfs:comment>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Server">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">server</rdfs:label>
+	<rdfs:label xml:lang="fr">serveur</rdfs:label>
+	<rdfs:comment xml:lang="en">An XMPP server, accepting connections from clients, components or other servers.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Un serveur XMPP, permettant la connection depuis des clients, des composants ou d’autres serveurs.</rdfs:comment>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Component">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">component</rdfs:label>
+	<rdfs:label xml:lang="fr">composant</rdfs:label>
+	<rdfs:comment xml:lang="en">An XMPP component, connecting to a server using XEP-0114 or XEP-0225.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Un composant XMPP, se connectant à un serveur en utilisant la XEP-0114 ou la XEP-0225.</rdfs:comment>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Library">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">library</rdfs:label>
+	<rdfs:label xml:lang="fr">bibliothèque</rdfs:label>
+	<rdfs:comment xml:lang="en">An XMPP library, for making clients, components or servers.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Une bibliothèque XMPP, permettant d’implémenter des clients, des composants ou des serveurs.</rdfs:comment>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#SupportedXep">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">supported XEP</rdfs:label>
+	<rdfs:label xml:lang="fr">XEP supportée</rdfs:label>
+	<rdfs:comment xml:lang="en">An XMPP Extension Protocol supported by this software.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Une extension au protocole XMPP prise en charge par ce logiciel.</rdfs:comment>
+</rdfs:Class>
+
+<!-- Properties -->
+
+<rdf:Property rdf:about="https://linkmauve.fr/ns/xmpp-doap#xep">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">XEP URL</rdfs:label>
+	<rdfs:label xml:lang="fr">URL de la XEP</rdfs:label>
+	<rdfs:comment xml:lang="en">HTTP address at which to find the XEP.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Adresse HTTP à laquelle trouver la XEP.</rdfs:comment>
+	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linkmauve.fr/ns/xmpp-doap#version">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">XEP version implemented by this software</rdfs:label>
+	<rdfs:label xml:lang="fr">version de la XEP implémentée dans ce logiciel</rdfs:label>
+	<rdfs:comment xml:lang="en">Software should aim to support the latest version of any XEP, this can be useful to spot the ones needing updating.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Les logiciels devraient cibler la dernière version d’une XEP, cette propriété permet d’éviter d’oublier de mettre à jour le support.</rdfs:comment>
+	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linkmauve.fr/ns/xmpp-doap#status">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">XEP status in this software</rdfs:label>
+	<rdfs:label xml:lang="fr">statut de la XEP dans ce logiciel</rdfs:label>
+	<rdfs:comment xml:lang="en">Can be 'complete', 'partial', 'planned' or 'wontfix'.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Peut être 'complete', 'partial', 'planned' ou 'wontfix'.</rdfs:comment>
+	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linkmauve.fr/ns/xmpp-doap#since">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">earliest version of the software implementing this XEP</rdfs:label>
+	<rdfs:label xml:lang="fr">plus ancienne version de ce logiciel implémentant cette XEP</rdfs:label>
+	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
+</rdf:Property>
+
+<rdf:Property rdf:about="https://linkmauve.fr/ns/xmpp-doap#note">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:label xml:lang="en">note about the implementation</rdfs:label>
+	<rdfs:label xml:lang="fr">commentaire sur l’implémentation</rdfs:label>
+	<rdfs:comment xml:lang="en">If this software has anything to say about its support for this XEP.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Cette propriété est utilisée si le logiciel souhaite commenter sur sa gestion de la XEP.</rdfs:comment>
+	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
+</rdf:Property>
+
+</rdf:RDF>
+
