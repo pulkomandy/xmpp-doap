@@ -10,3 +10,5 @@ Usage: reference the stylesheet in your DOAP xml:
     <?xml-stylesheet href="style.xsl" type="text/xsl"?>
 
 That's it!
+
+Sample rendering: https://pulkomandy.github.io/xmpp-doap/samples/movim.xml
