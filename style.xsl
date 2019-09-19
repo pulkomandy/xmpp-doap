@@ -31,7 +31,7 @@
 
 			<table>
 				<tr><th>XEP</th><th>Version</th><th>status</th><th>Since</th><th>Notes</th></tr>
-				<xsl:apply-templates select="xmpp:software/*"/>
+				<xsl:apply-templates select="doap:implements/*"/>
 			</table>
 		</body>
 	</html>
@@ -53,14 +53,9 @@
 	<li><xsl:value-of select="."/></li>
 </xsl:template>
 
-<xsl:template match="xmpp:supports">
-	<xsl:apply-templates select="xmpp:SupportedXep"/>
-</xsl:template>
-
 <xsl:template match="xmpp:SupportedXep">
 	<tr class="{xmpp:status}">
-		<td><a href="{xmpp:xep/@rdf:resource}">XEP-
-				<xsl:value-of select="substring-before(substring-after(xmpp:xep/@rdf:resource, 'https://xmpp.org/extensions/xep-'), '.')"/>
+		<td><a href="{xmpp:xep/@rdf:resource}">XEP-<xsl:value-of select="substring-before(substring-after(xmpp:xep/@rdf:resource, 'https://xmpp.org/extensions/xep-'), '.')"/>
 		</a></td>
 		<td><xsl:value-of select="xmpp:version"/></td>
 		<td><xsl:value-of select="xmpp:status"/></td>
