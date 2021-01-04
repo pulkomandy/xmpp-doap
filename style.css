@@ -1,5 +1,6 @@
 img {
-	float: left;
+	margin-right: 32px;
+	vertical-align: middle;
 }
 
 table {
