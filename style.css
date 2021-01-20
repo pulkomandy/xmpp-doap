@@ -2,13 +2,11 @@ img {
 	margin-right: 32px;
 	vertical-align: middle;
 }
-
 table {
 	width: 100%;
 	border-collapse: collapse;
 	clear: both;
 }
-
 th {
 	border: 1px solid rgb(159, 175, 190);
 	background-color: rgb(112, 128, 144);
@@ -18,7 +16,6 @@ th {
 th:nth-child(5) {
 	text-align: left;
 }
-
 tr {
 	border: 1px solid rgb(233, 233, 233);
 }
@@ -28,53 +25,47 @@ tr:nth-child(odd) {
 tr:hover {
 	background-color: rgb(240, 240, 240);
 }
-
 td {
 	padding: 10px;
-	color: rgb(28, 28, 28)
+	color: rgb(28, 28, 28);
 }
-
 a {
 	padding: 5px;
 	color: rgb(70, 130, 180);
-    text-decoration: none;
+	text-decoration: none;
 }
 a:hover {
 	color: rgb(50, 90, 120);
-    text-decoration: none;
+	text-decoration: none;
 }
-
 .complete {
-    color: rgb(81, 134, 81);
+	color: rgb(81, 134, 81);
 	background-color: rgb(224, 241, 217);
 	font-size: small;
-    padding: 5;
+	padding: 5;
 }
-
 .partial {
-    color: rgb(182, 124, 37);
+	color: rgb(182, 124, 37);
 	background-color: rgb(241, 238, 196);
 	font-size: small;
-    padding: 5;
+	padding: 5;
 }
-
 a.button {
 	border: none;
 	color: rgb(255, 255, 255);
 	background-color: rgb(112, 128, 144);
-  	padding: 12px 24px;
-  	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-  	font-size: 16px;
-  	margin: 4px 12px 4px 0;
-  	cursor: pointer;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 12px 4px 0;
+	cursor: pointer;
 }
 a.button:hover {
 	background-color: rgb(119, 136, 153);
 	color: rgb(255, 255, 255);
 }
-
 .header {
 	padding: 40px;
 	text-align: center;
@@ -90,18 +81,16 @@ a.button:hover {
 	font-size: 14px;
 	padding: 10px;
 }
-
 .os {
 	margin: auto;
 	margin-bottom: 30px;
 	width: 75%;
 	text-align: center;
-	color: rgb(65, 78, 90)
+	color: rgb(65, 78, 90);
 }
 .os p {
 	font-weight: bold;
 }
-
 .chip {
 	display: inline-block;
 	padding: 3px 10px;
@@ -110,5 +99,61 @@ a.button:hover {
 	font-size: 14px;
 	line-height: 20px;
 	border-radius: 5px;
-	background-color: #f1f1f1;
+	background-color: rgb(241, 241, 241);
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #161616;
+		color: #ccc;
+	}
+	th {
+		border: 1px solid rgb(48, 54, 58);
+		background-color: rgb(34, 39, 44);
+		color: rgb(230, 230, 230);
+	}
+	tr {
+		border: 1px solid rgb(36, 36, 36);
+	}
+	tr:nth-child(odd) {
+		background-color: rgb(29, 29, 29);
+	}
+	tr:hover {
+		background-color: rgb(22, 22, 22);
+	}
+	td {
+		color: rgb(238, 238, 238);
+	}
+	a {
+		color: rgb(88, 163, 225);
+	}
+	a:hover {
+		color: rgb(137, 196, 241);
+	}
+	.complete {
+		color: rgb(179, 232, 179);
+		background-color: rgb(39, 54, 34);
+	}
+	.partial {
+		color: rgb(255, 239, 215);
+		background-color: rgb(61, 58, 23);
+	}
+	a.button {
+		color: rgb(232, 232, 232);
+		background-color: rgb(43, 50, 56);
+	}
+	a.button:hover {
+		color: rgb(255, 255, 255);
+		background-color: rgb(76, 85, 92);
+	}
+	.header {
+		background: linear-gradient(40deg, rgb(18, 18, 18) 0%, rgb(29, 29, 29) 60%);
+		color: rgb(204, 204, 204);
+	}
+	.os {
+		color: rgb(197, 215, 232);
+	}
+	.chip {
+		background-color: rgb(49, 49, 49);
+	}
 }
