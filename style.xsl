@@ -30,7 +30,7 @@
 			</div>
 
 			<table>
-				<tr><th>XEP</th><th>Version</th><th>Status</th><th>Since</th><th>Notes</th></tr>
+				<tr><th>XEP</th><th>Name</th><th>Latest version</th><th>Version implemented</th><th>Status</th><th>Since</th><th>Notes</th></tr>
 				<xsl:apply-templates select="doap:implements/*"/>
 			</table>
 		</body>
@@ -60,13 +60,53 @@
 </xsl:template>
 
 <xsl:template match="xmpp:SupportedXep">
+	<!--
+		Get the definition of the XEP that this block refers to.
+		We will use that to extract the details of the latest revision and
+		the one that is implemented, so that we can show that info as well
+		as check if it is the latest revision that is being used.
+	-->
+	<xsl:variable
+		name="xep"
+		select="document(concat(substring-before(xmpp:xep/@rdf:resource, '.htm'), '.xml'))"
+	/>
+	<xsl:variable
+		name="xep-latest-revision"
+		select="$xep/xep/header/revision[1]"
+	/>
+	<xsl:variable
+		name="xep-implemented-revision"
+		select="$xep/xep/header/revision[version/text() = current()/xmpp:version/text()]"
+	/>
 	<tr>
 		<td>
 			<a href="{xmpp:xep/@rdf:resource}">
 			XEP-<xsl:value-of select="substring-before(substring-after(xmpp:xep/@rdf:resource, 'https://xmpp.org/extensions/xep-'), '.')"/>
 			</a>
 		</td>
-		<td><xsl:value-of select="xmpp:version"/></td>
+		<td>
+			<a href="{xmpp:xep/@rdf:resource}" title="{$xep/xep/header/abstract/text()}">
+			<xsl:value-of select="$xep/xep/header/title/text()"/>
+			</a>
+		</td>
+		<td>
+			<span class="{version-class}" title="{$xep-latest-revision/date/text()}">
+				<xsl:value-of select="$xep-latest-revision/version/text()"/>
+			</span>
+		</td>
+		<td>
+			<span title="{$xep-implemented-revision/date/text()}">
+				<xsl:choose>
+					<xsl:when test="$xep-latest-revision/version/text() = xmpp:version">
+						<xsl:attribute name="class">version-latest</xsl:attribute>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:attribute name="class">version-outdated</xsl:attribute>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:value-of select="xmpp:version"/>
+			</span>
+		</td>
 		<td><span class="{xmpp:status}"><xsl:value-of select="xmpp:status"/></span></td>
 		<td><xsl:value-of select="xmpp:since"/></td>
 		<td><xsl:value-of select="xmpp:note"/></td>
