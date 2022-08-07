@@ -50,6 +50,14 @@ a:hover {
 	font-size: small;
 	padding: 5;
 }
+.version-latest {
+	color: rgb(81, 134, 81);
+	background-color: rgb(224, 241, 217);
+}
+.version-outdated {
+	color: rgb(182, 124, 37);
+	background-color: rgb(241, 238, 196);
+}
 a.button {
 	border: none;
 	color: rgb(255, 255, 255);
