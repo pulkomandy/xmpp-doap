@@ -30,7 +30,7 @@
 			</div>
 
 			<table>
-				<tr><th>XEP</th><th>Name</th><th>Latest version</th><th>Version implemented</th><th>Status</th><th>Since</th><th>Notes</th></tr>
+				<tr><th>XEP</th><th>Version implemented</th><th>Status</th><th>Since</th><th>Notes</th></tr>
 				<xsl:apply-templates select="doap:implements/*"/>
 			</table>
 		</body>
@@ -72,38 +72,39 @@
 	/>
 	<xsl:variable
 		name="xeplist"
-		select="document('https://xmpp.org/extensions/xeplist.xml')"
+		select="document('https://xmpp.org/extensions/xeplist.xml')/xep-infos"
 	/>
 	<xsl:variable
 		name="xep-descriptor"
-		select="$xeplist/xep[number/text() = number($xep-number)]"
+		select="$xeplist/xep[number/text() = number($xepnumber)]"
 	/>
 	<tr>
 		<td>
 			<a href="{xmpp:xep/@rdf:resource}">
 			XEP-<xsl:value-of select="$xepnumber"/>
 			</a>
-		</td>
-		<td>
 			<a href="{xmpp:xep/@rdf:resource}" title="{$xep-descriptor/abstract/text()}">
-				<xsl:value-of select="$xep-descriptor/abstract/text()"/>
+				<xsl:value-of select="$xep-descriptor/title/text()"/>
 			</a>
 		</td>
 		<td>
-			<span class="{version-class}" title="{$xep-descriptor/last-revision/date/text()}">
-				<xsl:value-of select="$xep-descriptor/last-revision/version/text()"/>
+			<span class="version-class">
+				<xsl:value-of select="xmpp:version"/>
 			</span>
-		</td>
-		<td>
-			<xsl:choose>
-				<xsl:when test="$xep-descriptor/last-revision/version/text() = xmpp:version">
-					<xsl:attribute name="class">version-latest</xsl:attribute>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:attribute name="class">version-outdated</xsl:attribute>
-				</xsl:otherwise>
-			</xsl:choose>
-			<xsl:value-of select="xmpp:version"/>
+
+			<span title="{$xep-descriptor/last-revision/date/text()}">
+				<xsl:choose>
+					<xsl:when test="$xep-descriptor/last-revision/version/text() = xmpp:version">
+						<xsl:attribute name="class">version-latest</xsl:attribute>
+						✔️
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:attribute name="class">version-outdated</xsl:attribute>
+						(latest: <xsl:value-of select="$xep-descriptor/last-revision/version/text()"/>)
+					</xsl:otherwise>
+				</xsl:choose>
+			</span>
+
 		</td>
 		<td><span class="{xmpp:status}"><xsl:value-of select="xmpp:status"/></span></td>
 		<td><xsl:value-of select="xmpp:since"/></td>
