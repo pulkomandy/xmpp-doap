@@ -1,173 +1,266 @@
+:root {
+    /* Primary color in HSL: Change this to customize all colored elements */
+    --color-h: 210;
+    --color-s: 13%;
+    --color-l: 50%;
+}
+body {
+    font-family: sans-serif;
+}
 img {
-	margin-right: 32px;
-	vertical-align: middle;
-}
-table {
-	width: 100%;
-	border-collapse: collapse;
-	clear: both;
-}
-th {
-	border: 1px solid rgb(159, 175, 190);
-	background-color: rgb(112, 128, 144);
-	color: rgb(255, 255, 255);
-	padding: 10px;
-}
-th:nth-child(5) {
-	text-align: left;
-}
-tr {
-	border: 1px solid rgb(233, 233, 233);
-}
-tr:nth-child(odd) {
-	background-color: rgb(247, 247, 247);
-}
-tr:hover {
-	background-color: rgb(240, 240, 240);
-}
-td {
-	padding: 10px;
-	color: rgb(28, 28, 28);
+    margin-right: 1.7rem;
+    vertical-align: middle;
 }
 a {
-	padding: 5px;
-	color: rgb(70, 130, 180);
-	text-decoration: none;
+    text-decoration: none;
+    padding: 5px;
+    color: hsl(
+        var(--color-h),
+        calc(var(--color-s) + 15%),
+        calc(var(--color-l) - 10%)
+    );
 }
 a:hover {
-	color: rgb(50, 90, 120);
-	text-decoration: none;
-}
-.complete {
-	color: rgb(81, 134, 81);
-	background-color: rgb(224, 241, 217);
-	font-size: small;
-	padding: 5px;
-}
-.partial {
-	color: rgb(182, 124, 37);
-	background-color: rgb(241, 238, 196);
-	font-size: small;
-	padding: 5px;
-}
-.version-latest {
-	color: rgb(81, 134, 81);
-	background-color: rgb(224, 241, 217);
-	font-size: small;
-	padding: 5px;
-	margin-left: 5px;
-}
-.version-outdated {
-	color: rgb(182, 124, 37);
-	background-color: rgb(241, 238, 196);
-	font-size: small;
-	padding: 5px;
-	margin-left: 5px;
+    text-decoration: none;
+    filter: brightness(110%);
 }
 a.button {
-	border: none;
-	color: rgb(255, 255, 255);
-	background-color: rgb(112, 128, 144);
-	padding: 12px 24px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 12px 4px 0;
-	cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(
+        var(--color-h),
+        var(--color-s),
+        var(--color-l)
+    );
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    margin: 4px 12px 4px 0;
 }
 a.button:hover {
-	background-color: rgb(119, 136, 153);
-	color: rgb(255, 255, 255);
+    filter: brightness(110%);
 }
 .header {
-	padding: 40px;
-	text-align: center;
-	background: linear-gradient(40deg, rgb(215, 223, 226) 0%, rgb(230, 236, 239) 60%);
-	color: rgb(68, 68, 68);
-	font-size: 30px;
-	margin-bottom: 15px;
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(
+        40deg,
+        hsl(
+            var(--color-h), var(--color-s), calc(var(--color-l) + 30%)
+        ) 0%,
+        hsl(0, 0%, 90%) 60%
+    );
+    color: hsl(0, 0%, 27%);
+    font-size: xx-large;
+    margin-bottom: 15px;
 }
-.header b {
-	font-size: 24px;
+.shortdesc {
+    font-size: x-large;
+    font-weight: 300;
+    opacity: 0.8;
 }
-.header p {
-	font-size: 14px;
-	padding: 10px;
+.description {
+    font-size: medium;
+    opacity: 0.9;
 }
 .os {
-	margin: auto;
-	margin-bottom: 30px;
-	width: 75%;
-	text-align: center;
-	color: rgb(65, 78, 90);
-}
-.os p {
-	font-weight: bold;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 75%;
+    text-align: center;
+    opacity: 0.7;
 }
 .chip {
-	display: inline-block;
-	padding: 3px 10px;
-	margin: 3px 5px 3px 0;
-	height: 20px;
-	font-size: 14px;
-	line-height: 20px;
-	border-radius: 5px;
-	background-color: rgb(241, 241, 241);
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 3px 5px 3px 0;
+    height: 20px;
+    font-size: small;
+    font-weight: 700;
+    line-height: 20px;
+    border-radius: 12px;
+    color:hsl(0, 0%, 100%);
+    background-color: hsl(
+        var(--color-h),
+        var(--color-s),
+        calc(var(--color-l) - 20%)
+    );
+}
+
+/* XEP table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    clear: both;
+}
+th {
+    border: 1px solid hsl(
+        var(--color-h),
+        var(--color-s),
+        calc(var(--color-l) + 15%)
+    );
+    background-color: hsl(
+        var(--color-h),
+        var(--color-s),
+        var(--color-l)
+    );
+    color: hsl(0, 0%, 100%);
+    padding: 10px;
+}
+th:nth-child(1) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+th:nth-child(5) {
+    text-align: left;
+}
+tr {
+    border: 1px solid hsl(0, 0%, 91%);
+}
+tr:nth-child(odd) {
+    background-color: hsl(0, 0%, 97%);
+}
+tr:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+td {
+    padding: 10px;
+    color: hsl(0, 0%, 11%);
+}
+td:nth-child(2) {
+    text-align: end;
+}
+td:nth-child(3) {
+    text-align: center;
+}
+td:nth-child(4) {
+    text-align: end;
+}
+
+.xep-implementation-status {
+    font-size: small;
+    padding: 5px;
+}
+.complete {
+    color: hsl(120, 25%, 42%);
+    background-color: hsl(103, 46%, 90%);
+}
+.partial {
+    color: hsl(36, 66%, 43%);
+    background-color: hsl(56, 62%, 86%);
+}
+.planned {
+    color: hsl(208, 41%, 39%);
+    background-color: hsl(197, 62%, 86%);
+}
+.removed,
+.deprecated,
+.wontfix {
+    color:hsl(0, 0%, 25%);
+    background-color: hsl(0, 0%, 91%);
+}
+.version {
+    font-family: monospace;
+    margin: 1px;
+}
+.version-outdated {
+    color: hsl(36, 66%, 43%);
+    background-color: hsl(56, 62%, 86%);
+}
+.small {
+    font-size: small;
+}
+.no-info {
+    text-align: center;
+    opacity: 0.5;
+    margin: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #161616;
-		color: #ccc;
-	}
-	th {
-		border: 1px solid rgb(48, 54, 58);
-		background-color: rgb(34, 39, 44);
-		color: rgb(230, 230, 230);
-	}
-	tr {
-		border: 1px solid rgb(36, 36, 36);
-	}
-	tr:nth-child(odd) {
-		background-color: rgb(29, 29, 29);
-	}
-	tr:hover {
-		background-color: rgb(22, 22, 22);
-	}
-	td {
-		color: rgb(238, 238, 238);
-	}
-	a {
-		color: rgb(88, 163, 225);
-	}
-	a:hover {
-		color: rgb(137, 196, 241);
-	}
-	.complete {
-		color: rgb(179, 232, 179);
-		background-color: rgb(39, 54, 34);
-	}
-	.partial {
-		color: rgb(255, 239, 215);
-		background-color: rgb(61, 58, 23);
-	}
-	a.button {
-		color: rgb(232, 232, 232);
-		background-color: rgb(43, 50, 56);
-	}
-	a.button:hover {
-		color: rgb(255, 255, 255);
-		background-color: rgb(76, 85, 92);
-	}
-	.header {
-		background: linear-gradient(40deg, rgb(18, 18, 18) 0%, rgb(29, 29, 29) 60%);
-		color: rgb(204, 204, 204);
-	}
-	.os {
-		color: rgb(197, 215, 232);
-	}
-	.chip {
-		background-color: rgb(49, 49, 49);
-	}
+    body {
+        background-color: hsl(0, 0%, 9%);
+        color: hsl(0, 0%, 90%);
+    }
+    a {
+        color: hsl(
+            var(--color-h),
+            calc(var(--color-s) + 15%),
+            calc(var(--color-l) + 15%)
+        );
+    }
+    a.button {
+        color: hsl(0, 0%, 91%);
+        background-color: hsl(
+            var(--color-h),
+            var(--color-s),
+            calc(var(--color-l) - 20%)
+        );
+    }
+    .header {
+        color: hsl(0, 0%, 91%);
+        background: linear-gradient(
+            40deg,
+            hsl(
+                var(--color-h), var(--color-s), calc(var(--color-l) - 30%)
+            ) 0%,
+            hsl(0, 0%, 10%) 60%
+        );
+    }
+    .chip {
+        color:hsl(0, 0%, 100%);
+        background-color: hsl(0, 0%, 22%);
+    }
+
+    /* XEP table */
+    th {
+        border: 1px solid hsl(
+            var(--color-h),
+            var(--color-s),
+            calc(var(--color-l) - 20%)
+        );
+        background-color: hsl(
+            var(--color-h),
+            var(--color-s),
+            calc(var(--color-l) - 30%)
+        );
+        color: hsl(0, 0%, 90%);
+    }
+    tr {
+        border: 1px solid hsl(0, 0%, 14%);
+    }
+    tr:nth-child(odd) {
+        background-color: hsl(0, 0%, 11%);
+    }
+    tr:hover {
+        background-color: hsl(0, 0%, 9%);
+    }
+    td {
+        color: hsl(0, 0%, 93%);
+    }
+    .complete {
+        color: hsl(120, 54%, 81%);
+        background-color: hsl(105, 23%, 17%);
+    }
+    .partial {
+        color: hsl(36, 100%, 92%);
+        background-color: hsl(55, 45%, 16%);
+    }
+    .planned {
+        color: hsl(205, 80%, 76%);
+        background-color: hsl(191, 52%, 17%);
+    }
+    .removed,
+    .deprecated,
+    .wontfix {
+        color: hsl(0, 0%, 100%);
+        background-color: hsl(0, 0%, 31%);
+    }
+    .version-outdated {
+        color: hsl(36, 100%, 92%);
+        background-color: hsl(55, 45%, 16%);
+    }
 }
