@@ -10,7 +10,7 @@
 >
 
 <!--
-	Copyright © 2019 Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>
+	Copyright © 2019-2021 Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>
 -->
 
 <!-- about this schema -->
@@ -35,44 +35,13 @@
 
 <!-- Classes are listed first -->
 
-<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Client">
-	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
-	<rdfs:label xml:lang="en">client</rdfs:label>
-	<rdfs:label xml:lang="fr">client</rdfs:label>
-	<rdfs:comment xml:lang="en">An XMPP client, connecting to an XMPP server or using serverless messaging (XEP-0174).</rdfs:comment>
-	<rdfs:comment xml:lang="fr">Un client XMPP, se connectant à un serveur XMPP ou utilisant des messages sans serveur (XEP-0174).</rdfs:comment>
-</rdfs:Class>
-
-<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Server">
-	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
-	<rdfs:label xml:lang="en">server</rdfs:label>
-	<rdfs:label xml:lang="fr">serveur</rdfs:label>
-	<rdfs:comment xml:lang="en">An XMPP server, accepting connections from clients, components or other servers.</rdfs:comment>
-	<rdfs:comment xml:lang="fr">Un serveur XMPP, permettant la connection depuis des clients, des composants ou d’autres serveurs.</rdfs:comment>
-</rdfs:Class>
-
-<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Component">
-	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
-	<rdfs:label xml:lang="en">component</rdfs:label>
-	<rdfs:label xml:lang="fr">composant</rdfs:label>
-	<rdfs:comment xml:lang="en">An XMPP component, connecting to a server using XEP-0114 or XEP-0225.</rdfs:comment>
-	<rdfs:comment xml:lang="fr">Un composant XMPP, se connectant à un serveur en utilisant la XEP-0114 ou la XEP-0225.</rdfs:comment>
-</rdfs:Class>
-
-<rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#Library">
-	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
-	<rdfs:label xml:lang="en">library</rdfs:label>
-	<rdfs:label xml:lang="fr">bibliothèque</rdfs:label>
-	<rdfs:comment xml:lang="en">An XMPP library, for making clients, components or servers.</rdfs:comment>
-	<rdfs:comment xml:lang="fr">Une bibliothèque XMPP, permettant d’implémenter des clients, des composants ou des serveurs.</rdfs:comment>
-</rdfs:Class>
-
 <rdfs:Class rdf:about="https://linkmauve.fr/ns/xmpp-doap#SupportedXep">
 	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
 	<rdfs:label xml:lang="en">supported XEP</rdfs:label>
 	<rdfs:label xml:lang="fr">XEP supportée</rdfs:label>
 	<rdfs:comment xml:lang="en">An XMPP Extension Protocol supported by this software.</rdfs:comment>
 	<rdfs:comment xml:lang="fr">Une extension au protocole XMPP prise en charge par ce logiciel.</rdfs:comment>
+	<rdfs:subClassOf rdf:resource="http://usefulinc.com/ns/doap#Specification"/>
 </rdfs:Class>
 
 <!-- Properties -->
@@ -99,8 +68,8 @@
 	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
 	<rdfs:label xml:lang="en">XEP status in this software</rdfs:label>
 	<rdfs:label xml:lang="fr">statut de la XEP dans ce logiciel</rdfs:label>
-	<rdfs:comment xml:lang="en">Can be 'complete', 'partial', 'planned' or 'wontfix'.</rdfs:comment>
-	<rdfs:comment xml:lang="fr">Peut être 'complete', 'partial', 'planned' ou 'wontfix'.</rdfs:comment>
+	<rdfs:comment xml:lang="en">Can be 'complete', 'partial', 'planned', 'deprecated', 'removed' or 'wontfix'.</rdfs:comment>
+	<rdfs:comment xml:lang="fr">Peut être 'complete', 'partial', 'planned', 'deprecated', 'removed' ou 'wontfix'.</rdfs:comment>
 	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
 </rdf:Property>
 
@@ -119,6 +88,40 @@
 	<rdfs:comment xml:lang="fr">Cette propriété est utilisée si le logiciel souhaite commenter sur sa gestion de la XEP.</rdfs:comment>
 	<rdfs:domain rdf:resource="https://linkmauve.fr/ns/xmpp-doap#SupportedXep" />
 </rdf:Property>
+
+<!-- Descriptions -->
+
+<rdfs:Description rdf:about="https://linkmauve.fr/ns/xmpp-doap#category-client">
+  <rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:title xml:lang="en">client</rdfs:title>
+	<rdfs:title xml:lang="fr">client</rdfs:title>
+	<rdfs:shortdesc xml:lang="en">An XMPP client, connecting to an XMPP server or using serverless messaging (XEP-0174).</rdfs:shortdesc>
+	<rdfs:shortdesc xml:lang="fr">Un client XMPP, se connectant à un serveur XMPP ou utilisant des messages sans serveur (XEP-0174).</rdfs:shortdesc>
+</rdfs:Description>
+
+<rdfs:Description rdf:about="https://linkmauve.fr/ns/xmpp-doap#category-server">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:title xml:lang="en">server</rdfs:title>
+	<rdfs:title xml:lang="fr">serveur</rdfs:title>
+	<rdfs:shortdesc xml:lang="en">An XMPP server, accepting connections from clients, components or other servers.</rdfs:shortdesc>
+	<rdfs:shortdesc xml:lang="fr">Un serveur XMPP, permettant la connection depuis des clients, des composants ou d’autres serveurs.</rdfs:shortdesc>
+</rdfs:Description>
+
+<rdfs:Description rdf:about="https://linkmauve.fr/ns/xmpp-doap#category-component">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:title xml:lang="en">component</rdfs:title>
+	<rdfs:title xml:lang="fr">composant</rdfs:title>
+	<rdfs:shortdesc xml:lang="en">An XMPP component, connecting to a server using XEP-0114 or XEP-0225.</rdfs:shortdesc>
+	<rdfs:shortdesc xml:lang="fr">Un composant XMPP, se connectant à un serveur en utilisant la XEP-0114 ou la XEP-0225.</rdfs:shortdesc>
+</rdfs:Description>
+
+<rdfs:Description rdf:about="https://linkmauve.fr/ns/xmpp-doap#category-library">
+	<rdfs:isDefinedBy rdf:resource="https://linkmauve.fr/ns/xmpp-doap#" />
+	<rdfs:title xml:lang="en">library</rdfs:title>
+	<rdfs:title xml:lang="fr">bibliothèque</rdfs:title>
+	<rdfs:shortdesc xml:lang="en">An XMPP library, for making clients, components or servers.</rdfs:shortdesc>
+	<rdfs:shortdesc xml:lang="fr">Une bibliothèque XMPP, permettant d’implémenter des clients, des composants ou des serveurs.</rdfs:shortdesc>
+</rdfs:Description>
 
 </rdf:RDF>
 
