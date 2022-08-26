@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="../style.xsl" type="text/xsl"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<Project xmlns="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#">
+<Project xmlns="http://usefulinc.com/ns/doap#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:xmpp="https://linkmauve.fr/ns/xmpp-doap#"
+         xmlns:schema="https://schema.org/">
     <name>Movim</name>
 
     <created>2011-03-03</created>
@@ -25,13 +27,14 @@
     <language>en</language>
 
     <!-- TODO: https://github.com/ewilderj/doap/issues/40 -->
-    <!--<logo rdf:resource="https://movim.eu/img/vectorial.svg"/>-->
+    <schema:logo rdf:resource="https://movim.eu/img/vectorial.svg"/>
     <!-- TODO: https://github.com/ewilderj/doap/issues/50 -->
     <!--<screenshot rdf:resource="https://movim.eu/img/community.png"/>-->
 
     <programming-language>PHP</programming-language>
 
     <os>Linux</os>
+    <os>Browser</os>
 
     <category rdf:resource="https://linkmauve.fr/ns/xmpp-doap#category-client"/>
     <!-- TODO: Find a good set of resource URIs for this one. -->
@@ -264,6 +267,13 @@
     </implements>
     <implements>
         <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0215.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.7</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0231.html"/>
             <xmpp:status>partial</xmpp:status>
             <xmpp:version>1.0</xmpp:version>
@@ -330,6 +340,13 @@
     </implements>
     <implements>
         <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0319.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>1.0.2</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0330.html"/>
             <xmpp:status>complete</xmpp:status>
             <xmpp:version>0.1</xmpp:version>
@@ -351,6 +368,20 @@
     </implements>
     <implements>
         <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0343.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.3</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0353.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.3.1</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0359.html"/>
             <xmpp:status>complete</xmpp:status>
             <xmpp:version>0.6</xmpp:version>
@@ -360,7 +391,7 @@
         <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0363.html"/>
             <xmpp:status>complete</xmpp:status>
-            <xmpp:version>0.9</xmpp:version>
+            <xmpp:version>1.0.0</xmpp:version>
         </xmpp:SupportedXep>
     </implements>
     <implements>
@@ -373,9 +404,23 @@
     </implements>
     <implements>
         <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0368.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>1.1.0</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
             <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0372.html"/>
             <xmpp:status>complete</xmpp:status>
             <xmpp:version>0.2</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0380.html"/>
+            <xmpp:status>partial</xmpp:status>
+            <xmpp:version>0.3.0</xmpp:version>
         </xmpp:SupportedXep>
     </implements>
     <implements>
@@ -385,7 +430,98 @@
             <xmpp:version>0.2.1</xmpp:version>
         </xmpp:SupportedXep>
     </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0393.html"/>
+            <xmpp:status>partial</xmpp:status>
+            <xmpp:version>1.1.1</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0402.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.3</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0422.html"/>
+            <xmpp:status>partial</xmpp:status>
+            <xmpp:version>0.2.0</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0424.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.2.0</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0444.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.1.0</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
+    <implements>
+        <xmpp:SupportedXep>
+            <xmpp:xep rdf:resource="https://xmpp.org/extensions/xep-0461.html"/>
+            <xmpp:status>complete</xmpp:status>
+            <xmpp:version>0.1.0</xmpp:version>
+        </xmpp:SupportedXep>
+    </implements>
 
+    <release>
+        <Version>
+            <revision>0.20</revision>
+            <created>2022-02-19</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.20"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.19</revision>
+            <created>2021-02-20</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.19"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.18</revision>
+            <created>2020-09-27</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.18"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.17.1</revision>
+            <created>2020-03-22</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.17.1"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.17</revision>
+            <created>2020-02-14</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.17"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.16.1</revision>
+            <created>2019-12-06</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.16.1"/>
+        </Version>
+    </release>
+    <release>
+        <Version>
+            <revision>0.16</revision>
+            <created>2019-10-18</created>
+            <file-release rdf:resource="https://github.com/movim/movim/releases/tag/v0.16"/>
+        </Version>
+    </release>
     <release>
         <Version>
             <revision>0.15</revision>
