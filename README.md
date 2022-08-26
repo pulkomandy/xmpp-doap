@@ -15,6 +15,8 @@ Reference the stylesheet in your DOAP xml file:
 
 That's it!
 
+Most web browsers natively support XSLT, so, people opening your file in a web browser will now see a nice webpage. And computers can easily make sense of the raw XML data which is presented to them in a standardized way.
+
 If you want to adapt the primary color of the rendering to _your_ client, just change the HSL color variables in `style.css` to your needs:
 
 ```css
